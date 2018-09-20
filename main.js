@@ -2,7 +2,8 @@
  * Example for a basic THREE.js scene setup.
  * 
  * @author  Ikaros Kappler
- * @date    2015-11-09
+ * @date    2018-09-20
+ * @cloned  from basic THREE.js scene setup from @date 2015-11-09
  * @version 1.0.0
  **/
 
@@ -82,10 +83,10 @@ this.orbitControls.enableZoom    = true;
 this.orbitControls.target.copy( cube.position );
 
 
-// ----------- Here comes the skybox ----------------------
-var imagePrefix = "images/skybox-";
-var directions  = ["xpos", "xneg", "ypos", "yneg", "zpos", "zneg"];
-var imageSuffix = ".png";
+//---BEGIN--- Here comes the skybox ----------------------
+var imagePrefix = "img/";
+var directions  = ["wp-side", "wp-side", "wp-side", "wp-side", "wp-top", "wp-top"];
+var imageSuffix = ".jpg";
 
 var materialArray = [];
 for (var i = 0; i < 6; i++)
@@ -97,9 +98,9 @@ for (var i = 0; i < 6; i++)
 var skyGeometry = new THREE.CubeGeometry( 500, 500, 500 );
 var skyMaterial = new THREE.MeshFaceMaterial( materialArray );
 var skyBox = new THREE.Mesh( skyGeometry, skyMaterial );
-skyBox.rotation.x += Math.PI / 2;
+//skyBox.rotation.x += Math.PI / 2;
 this.scene.add( skyBox );
-// ----------- Here comes the skybox ----------------------
+//---END----- Here comes the skybox ----------------------
 
 
 
